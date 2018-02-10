@@ -205,6 +205,15 @@ def preprocess_image(cv2im, resize_im=True):
 
 
 def load_model():
+    """
+        Loading the model checkpoint
+        
+        If it is a pretrained model, use torchvision and load the model. 
+        Otherwise define your model and load the checkpoint. 
+        
+        returns:
+            Model for inference.  
+    """
     checkpoint = torch.load(
         opt.model, map_location=lambda storage, loc: storage)
 
